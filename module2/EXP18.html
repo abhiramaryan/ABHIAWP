@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+ <meta charset="utf-8">
+ <title>Count the number of milliseconds between the clicks</title>
+ </head> 
+ <body>
+    <h1>click me twice and more </h1>
+
+   <div>Click on above line</div>
+   <script>
+    var lastt, tdiff;
+$( "h1" ).click(function( event ) {  if (lastt) {
+  tdiff = event.timeStamp - lastt;
+  $( "div" ).append( "Time since last event: " + tdiff + "<br>" );
+   } x
+   else {
+     $( "div" ).append( "<br>Click again.<br>" );
+	   }
+	 lastt = event.timeStamp;
+	});
+
+   </script>
+   </body>
+   </html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student fom</title>
+    
+    
+</head>
+
+<body>
+   
+   
+	<h1>Student Record Form</h1>
+	<form id="studentForm">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br>
+
+		<label for="age">Age:</label>
+		<input type="number" id="age" name="age"><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br>
+
+		<label for="phone">Phone:</label>
+		<input type="tel" id="phone" name="phone"><br>
+
+		<button type="submit" id="submit">Submit</button>
+	</form>
+    <script>
+        const form = document.getElementById('studentForm');
+        const nameInput = document.getElementById('name');
+        const ageInput = document.getElementById('age');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+    
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (validateForm()) {
+                alert('Form submitted successfully!');
+            }
+        });
+    
+        function validateForm() {
+            let isValid = true;
+    
+            if (nameInput.value === '') {
+                isValid = false;
+                alert('Please enter a name.');
+            }
+    
+            if (ageInput.value === '' || ageInput.value < 0 || ageInput.value > 120) {
+                isValid = false;
+                alert('Please enter a valid age.');
+            }
+    
+            if (emailInput.value === '') {
+                isValid = false;
+                alert('Please enter an email address.');
+            }
+    
+            if (phoneInput.value === '') {
+                isValid = false;
+                alert('Please enter a phone number.');
+            }
+    
+            return isValid;
+        }
+    </script>
+
+    
+</body>
+</html>
